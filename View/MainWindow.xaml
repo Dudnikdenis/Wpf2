@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:com ="clr-namespace:Wpf2.Command" 
         xmlns:local="clr-namespace:Wpf2.ViewModel"        
         mc:Ignorable="d"
         Title="MainWindow" 
@@ -18,6 +19,7 @@
                     <Button>Привет2</Button>
                 </MenuItem>                
                 <MenuItem Header="Печать списка продуктов"></MenuItem>
+                <!-- Команда из свойства-->
                 <MenuItem Header="Выход" Command="{Binding ClouseAppCommand}"/>
             </MenuItem>
             <MenuItem Header="Вид"></MenuItem>
@@ -25,7 +27,12 @@
         </Menu>
 
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="40" Background="Beige">
-            <Button Click="ButtonClic" Height="35" Width="60">12</Button>
+            <!-- Команда из класса-->
+            <Button  Height="35" Width="60">12
+                <Button.Command>
+                    <com:ClouseAppCommand/>
+                </Button.Command>
+            </Button>
             <Button  Height="35" Width="60">Доход</Button>
             <Button  Height="35" Width="60">Расход</Button>
             <Button  Height="35" Width="60">Заплатить</Button>
