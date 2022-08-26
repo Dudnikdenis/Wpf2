@@ -9,7 +9,7 @@ using Wpf2.Data;
 using Wpf2.Model;
 using Wpf2.ViewModel;
 
-namespace Wpf2
+namespace Wpf2.View
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
