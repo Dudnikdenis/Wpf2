@@ -10,9 +10,7 @@ namespace Wpf2.Model
     internal class Test : INotifyPropertyChanged
     {
         private int id;
-        private int name;
-
-        
+        private int name;       
 
         public int Id
         {
