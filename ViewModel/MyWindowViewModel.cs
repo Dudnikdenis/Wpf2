@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,22 @@ namespace Wpf2.ViewModel
 {
     class MyWindowViewModel : ViewModelBase
     {
-        #region Текст для вкладки
         private string hello = "Расходы ура";
+        private List<Test> tests =new List<Test>() { new Test(12,12), new Test(15,15)};
+
+        #region Postgres
+        //ConectPostgres con = new ConectPostgres();
+        //BindingList<Salary> salaries = new BindingList<Salary>();
+        //BindingList<Credits> crediits = new BindingList<Credits>();
+        #endregion
+
+        #region SQLite
+        //AppConect db = new AppConect();
+        
+        #endregion
+
+        #region привязка текста
+        
 
         public string Hello
         {
@@ -27,6 +42,18 @@ namespace Wpf2.ViewModel
                     return;
                 hello = value;
                 OnPropertyChanged("Hello");
+            }
+        }
+
+        public List<Test> Tests
+        {
+            get { return tests; }
+            set 
+            {
+                if(tests == value)
+                    return ;
+                tests = value;
+                OnClouseAppCommandExecuted("Test");
             }
         }
         #endregion
@@ -44,6 +71,8 @@ namespace Wpf2.ViewModel
 
         public MyWindowViewModel()
         {
+            //Tests = db.Tests.ToList(); 
+
             #region Команды
             ClouseAppCommand = new LiambdaCommand(OnClouseAppCommandExecuted, CanClouseAppCommandExecut);
             #endregion

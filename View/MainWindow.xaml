@@ -11,16 +11,19 @@
     <Window.DataContext>
         <local:MyWindowViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <com:ClouseAppCommand x:Key="ClouseAppCommand"/>
+    </Window.Resources>
     <DockPanel LastChildFill="True">
         <Menu DockPanel.Dock="Top" Height="25" Background="Gray">
             <MenuItem Header="Файл">
                 <MenuItem Header="Создать новую вкладку">
-                    <Button Click="Button_newTab_Clic">Привет1</Button>
+                    <Button >Привет1</Button>
                     <Button>Привет2</Button>
                 </MenuItem>                
                 <MenuItem Header="Печать списка продуктов"></MenuItem>
                 <!-- Команда из свойства-->
-                <MenuItem Header="Выход" Command="{Binding ClouseAppCommand}"/>
+                <MenuItem Header="Выход" Command="{StaticResource ClouseAppCommand}"/>
             </MenuItem>
             <MenuItem Header="Вид"></MenuItem>
             <MenuItem Header="Параметры"></MenuItem>
@@ -70,23 +73,25 @@
         </Grid>
 
         <TabControl x:Name="MyTabControl" DockPanel.Dock="Left">
-            <TabItem Header="Зарплата" VerticalAlignment="Center" Initialized="TabItem_Initialized_Salary">
+            <TabItem Header="Зарплата" VerticalAlignment="Center">
                 <Grid>
-                    <DataGrid  x:Name="DataGridSalary" IsReadOnly="True" AutoGenerateColumns="True" />
+                    <DataGrid   IsReadOnly="True" AutoGenerateColumns="True" />
                 </Grid>
             </TabItem>
             <TabItem Header="{Binding Hello}" VerticalContentAlignment="Center">
                 <Grid>
-                    <TextBlock Text="hello"/>
-                    <DataGrid  ItemsSource="{Binding Path=Test}"  AutoGenerateColumns="True" IsSynchronizedWithCurrentItem="False" Initialized="DataGridIncome_Initialized"/>
+                    <ListBox ItemsSource="{Binding Tests}">
+                        
+                    </ListBox>                   
                 </Grid>
             </TabItem>
-            <TabItem Header="Расходы" VerticalContentAlignment="Center">
+            <TabItem Header="{Binding Path=Tests.Count}" VerticalContentAlignment="Center">
                 <TextBlock Text="Инфо" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </TabItem>
-            <TabItem Header="Кредиты" VerticalAlignment="Center" Initialized="TabItem_Initialized_Credit">
+            <TabItem Header="Кредиты" VerticalAlignment="Center">
                 <Grid>
                     <DataGrid    AutoGenerateColumns="True" IsSynchronizedWithCurrentItem="False"/>
+                    <!--ItemsSource="{Binding Tests}" -->
                 </Grid>
             </TabItem>
             <TabItem Header = "Меню Семьи" VerticalContentAlignment="Center">

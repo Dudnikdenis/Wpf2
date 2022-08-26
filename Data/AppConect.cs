@@ -15,6 +15,6 @@ namespace Wpf2.Data
         //public DbSet<HomeWarehouse> HomeWarehouse { get; set; }
         //public DbSet<Dish> Dish { get; set; }
         public DbSet<Test> Tests { get; set; }
-        public AppConect() : base("DefaultConnection") { }
+        public AppConect() : base("DefaultConnection") { Database.SetInitializer<AppConect>(null); }
     }
 }
