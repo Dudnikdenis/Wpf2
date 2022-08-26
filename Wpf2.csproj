@@ -118,6 +118,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Command\Base\CommandBase.cs" />
     <Compile Include="ViewModel\Base\ViewModel.cs" />
     <Compile Include="ViewModel\MyWindowViewModel.cs" />
     <Page Include="View\MainWindow.xaml">
