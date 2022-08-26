@@ -16,8 +16,9 @@
                 <MenuItem Header="Создать новую вкладку">
                     <Button Click="Button_newTab_Clic">Привет1</Button>
                     <Button>Привет2</Button>
-                </MenuItem>
+                </MenuItem>                
                 <MenuItem Header="Печать списка продуктов"></MenuItem>
+                <MenuItem Header="Выход" Command="{Binding ClouseAppCommand}"/>
             </MenuItem>
             <MenuItem Header="Вид"></MenuItem>
             <MenuItem Header="Параметры"></MenuItem>
