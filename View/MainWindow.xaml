@@ -90,7 +90,7 @@
             </TabItem>
             <TabItem Header="Кредиты" VerticalAlignment="Center">
                 <Grid>
-                    <DataGrid    AutoGenerateColumns="True" IsSynchronizedWithCurrentItem="False"/>
+                    <DataGrid  ItemsSource="{Binding Path=Tests}"  AutoGenerateColumns="True" IsSynchronizedWithCurrentItem="False"/>
                     <!--ItemsSource="{Binding Tests}" -->
                 </Grid>
             </TabItem>
