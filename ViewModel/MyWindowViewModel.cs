@@ -17,7 +17,7 @@ namespace Wpf2.ViewModel
     class MyWindowViewModel : ViewModelBase
     {
         private string hello = "Расходы ура";
-        private List<Test> tests =new List<Test>() { new Test(12,12), new Test(15,15)};
+        private BindingList<Test> tests =new BindingList<Test>() { new Test(12,12), new Test(15,15)};
 
         #region Postgres
         //ConectPostgres con = new ConectPostgres();
@@ -45,7 +45,7 @@ namespace Wpf2.ViewModel
             }
         }
 
-        public List<Test> Tests
+        public BindingList<Test> Tests
         {
             get { return tests; }
             set 
